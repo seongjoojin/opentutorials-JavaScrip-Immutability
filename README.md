@@ -78,3 +78,29 @@ var o2 = Object.assign({}, o1);
 o2.name = "lee";
 console.log(o1, o2); // {name: "kim"} {name: "lee"}
 ```
+
+## 중첩된 개체의 복사
+
+Nested object
+
+```js
+var o1 = { name: "kim", score: [1, 2] };
+var o2 = Object.assign({}, o1);
+o2.score.push(3);
+```
+
+- score의 값인 `[1,2]`는 별도의 공간에 저장되게 됨 (배열의 위치를 저장)
+- 프로퍼티의 값이 오브젝트인 경우에는 값을 복제하는 것이 아니라 위치를 복제함 (복제한 곳에서 복제된 프로퍼티를 변경시 원본에 있던 값도 같이 변경됨)
+
+```js
+var o1 = { name: "kim", score: [1, 2] };
+var o2 = Object.assign({}, o1);
+o2.score = o2.score.concat();
+o2.score.push(3);
+```
+
+- push는 원본을 변경시킴
+- concat은 원본을 복제하고 거기에 인자로 들어온 값을 추가함
+- 인자를 넣지 않으니 복제만 됨
+- 복제 : concat, slice, Array.from()
+- 위와 같은 방식으로 하면 원본이 불변함을 유지할 수 있음
