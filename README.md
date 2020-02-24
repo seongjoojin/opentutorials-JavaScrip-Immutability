@@ -132,3 +132,10 @@ o1.name = "lee";
 
 - Object.freeze는 값 자체가 바꿔지는 막는 것 => 값을 규제함
 - const는 이름이 가르치는 것을 다른 것으로 바꾸지 못하게 막는 것 => 이름을 규제함
+
+## 수업을 마치며
+
+- functional programming : 함수를 부품으로 사용하는 프로그래밍 패러다임
+- pure function : immutability을 이용하여 사용할 수 있는 부품으로 만듬
+- 불변성을 위한 라이브러리 : https://immutable-js.github.io/immutable-js/, https://github.com/immerjs/immer, https://github.com/swannodette/mori
+- React => 화면을 그릴 때 이전 데이터와 지금 데이터를 비교하여 차이점을 통해서 화면을 그릴지 말지를 결정, 이전 데이터와 지금 데이터가 불변하다면 일치 연산자를 통해서 화면을 그릴지 말지 결정 할 수 있음.
