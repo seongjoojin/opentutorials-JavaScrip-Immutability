@@ -24,3 +24,24 @@
 - 원시(자) 데이터타입(Primitive) : Number, String, Boolean, Null, Undefined, Symbol
 - 객체(Object) : Object, Array, Function
 - 객체는 서로 연관된 정보를 정리정돈하는데 사용한다는 공통적인 특징이 있음
+
+## 초기 값의 비교
+
+```js
+var p1 = 1;
+var p2 = 2;
+p1 === p2; // true
+```
+
+p1,p2는 같은 값을 가르키게 됨.
+
+값이 같으면 같은 메모리 주소를 가르킴
+
+```js
+var o1 = { name: `kim` };
+var o2 = { name: `kim` };
+o1 === o2; // false
+```
+
+- 객체는 값이 같더라도 다른 메모리 주소를 가르킴.
+- 이유 : 객체는 바꿔질 수 있는 가변성을 가지고 있기 때문임
