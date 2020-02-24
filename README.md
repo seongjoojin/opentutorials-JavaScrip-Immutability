@@ -38,8 +38,8 @@ p1,p2는 같은 값을 가르키게 됨.
 값이 같으면 같은 메모리 주소를 가르킴
 
 ```js
-var o1 = { name: `kim` };
-var o2 = { name: `kim` };
+var o1 = { name: "kim" };
+var o2 = { name: "kim" };
 o1 === o2; // false
 ```
 
@@ -55,10 +55,26 @@ o1 === o2; // false
 - 객체에서는 값을 프로퍼티를 통해서 변경할 수 잇음
 
 ```js
-var o1 = { name: `kim` };
-var o2 = { name: `kim` };
+var o1 = { name: "kim" };
+var o2 = { name: "kim" };
 var o3 = o1;
 o3.name = "lee";
 ```
 
 - 원본데이터인 o1의 값도 변경되어 버림
+
+## 객체의 복사
+
+```js
+var o1 = { name: "kim" };
+var o2 = o1;
+o2.name = "lee";
+console.log(o1, o2); // {name: "lee"} {name: "lee"}
+```
+
+```js
+var o1 = { name: "kim" };
+var o2 = Object.assign({}, o1);
+o2.name = "lee";
+console.log(o1, o2); // {name: "kim"} {name: "lee"}
+```
