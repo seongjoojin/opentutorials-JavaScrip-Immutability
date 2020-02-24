@@ -119,3 +119,16 @@ o2.score.push(3);
 
 - `Object.freeze` : 객체를 수정 불가능하게 만듬 (객체의 프로퍼티를 얼림)
 - push 등으로 변경이 가능한데 이것은 객체에 경우 레퍼런스만 해당 공간에 저장하기 때문에 값 자체는 변경이 가능함 => 그렇기 때문에 객체안의 객체도 얼려주어야 불변하도록 할 수 있음
+
+## const vs. Object.freeze
+
+```js
+const o1 = { name: "kim" };
+Object.freeze(o1);
+const o2 = { name: "kim" };
+o1 = o2;
+o1.name = "lee";
+```
+
+- Object.freeze는 값 자체가 바꿔지는 막는 것 => 값을 규제함
+- const는 이름이 가르치는 것을 다른 것으로 바꾸지 못하게 막는 것 => 이름을 규제함
